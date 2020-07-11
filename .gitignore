@@ -759,3 +759,4 @@ DerivedData/
 ## Gcc Patch
 /*.gcno
 
+.idea/
