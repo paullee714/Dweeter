@@ -18,3 +18,24 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class FollowUser(models.Model):
+    user_id = models.IntegerField()
+    follow_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    follow_start_time = models.DateTimeField(auto_now_add=True)
+
+
+class FriendRequest(models.Model):
+    STATUS_PENDING = 0
+    STATUS_ACCEPT = 1
+    STATUS_IGNORE = 2
+
+    CHOICES_STATUS = (
+        (STATUS_PENDING,0),
+        (STATUS_ACCEPT,1),
+        (STATUS_IGNORE,2)
+    )
+    request_id = models.IntegerField()
+    response_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    status = models.IntegerField(choices=CHOICES_STATUS,default=0)
