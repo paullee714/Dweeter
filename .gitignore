@@ -760,3 +760,6 @@ DerivedData/
 /*.gcno
 
 .idea/
+
+## Django migration
+*/migrations

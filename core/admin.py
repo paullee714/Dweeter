@@ -34,18 +34,10 @@ class UserAdminModel(admin.ModelAdmin):
 class FollowUserAdmin(admin.ModelAdmin):
     list_display = [
         'user_id',
-        'follow_request_user',
         'follow_id',
         'follow_start_time'
 
     ]
-
-    def follow_request_user(self,user):
-        pass
-
-    def follow_response_user(self,user):
-        pass
-
 
 
 @admin.register(FriendRequest)

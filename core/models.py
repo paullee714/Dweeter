@@ -21,8 +21,8 @@ class User(AbstractUser):
 
 
 class FollowUser(models.Model):
-    user_id = models.IntegerField()
-    follow_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User,on_delete=models.CASCADE, related_name='request')
+    follow_id = models.ForeignKey(User,on_delete=models.CASCADE, related_name='followed_by')
     follow_start_time = models.DateTimeField(auto_now_add=True)
 
 
@@ -36,6 +36,6 @@ class FriendRequest(models.Model):
         (STATUS_ACCEPT,1),
         (STATUS_IGNORE,2)
     )
-    request_id = models.IntegerField()
-    response_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    request_id = models.ForeignKey(User,on_delete=models.CASCADE, related_name='request_fr')
+    response_id = models.ForeignKey(User,on_delete=models.CASCADE, related_name='response_fr')
     status = models.IntegerField(choices=CHOICES_STATUS,default=0)
