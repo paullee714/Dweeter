@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        무슨 생각을 하고 계신가요~?
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="card-body">
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize: none;"></textarea>
+            </div>
+        </div>
+        <div class="card-footer text-muted text-right">
+            <button type="submit" class="btn btn-primary">Dweet</button>
+        </div>
+    </form>
+</div>

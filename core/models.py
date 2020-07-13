@@ -12,7 +12,7 @@ class User(AbstractUser):
         (GENDER_OTHER, 'Other')
     )
 
-    bio = models.CharField(max_length=256,default='')
+    bio = models.CharField(max_length=256,null=True)
     gender = models.CharField(choices=CHOICES_GENDER,max_length=1,default=GENDER_OTHER)
     last_activate_time = models.DateTimeField(null=True)
 
