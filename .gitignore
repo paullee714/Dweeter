@@ -763,3 +763,4 @@ DerivedData/
 
 ## Django migration
 */migrations
+*/migrations/**
