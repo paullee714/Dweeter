@@ -44,6 +44,7 @@ ADD_APPS = [
 
 THRID_PARTY_APPS = [
     'rangefilter',
+    'django_seed',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + ADD_APPS + THRID_PARTY_APPS
